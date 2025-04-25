@@ -1,0 +1,10 @@
+{
+    "colors": {
+        "primary": "#4F46E5",
+        "secondary": "#9333EA",
+        "text": "#1F2937",
+        "background": "#F9FAFB"
+    },
+    "logo": "/assets/images/dark-logo.webp",
+    "font": "Inter"
+}

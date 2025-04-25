@@ -1,0 +1,24 @@
+[
+    {
+        "key": "1",
+        "title": "Learn",
+        "description": "Learn in-depth Digital marketing skills with our expert instructors.",
+        "transitionDuration": 0.6,
+        "delay": 0.4
+    },
+    {
+        "key": "2",
+        "title": "Practice",
+        "description": "Practice your knowledge with real-world projects and case studies.",
+        "transitionDuration": 0.8,
+        "delay": 0.6
+    },
+    {
+        "key": "3",
+        "title": "Build",
+        "description": "Build your portfolio and showcase your skills to potential Industry leaders.",
+        "transitionDuration": 1.2,
+        "delay": 0.8
+    }
+]
+
