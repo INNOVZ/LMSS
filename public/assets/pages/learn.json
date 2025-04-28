@@ -7,17 +7,19 @@
         "buttomText":" 0.6",
         "link":" 0.4",
         "transitionDuration": 0.8,
-        "delay": 0.6
+        "delay": 0.6,
+        "icon": "Rss"
     },
     {
         "key": "2",
-        "title": "Social Media MArketing",
+        "title": "Social Media Marketing",
          "course_details": "Video lectures, quizzes, and hands-on projects.",
         "description": "Practice your knowledge with real-world projects and case studies.",
          "buttomText":" 0.6",
         "link":" 0.4",
         "transitionDuration":0.8,
-        "delay": 0.6
+        "delay": 0.6,
+        "icon":"Podcast"
     },
     {
         "key": "3",
@@ -27,6 +29,7 @@
          "buttomText":" 0.6",
         "link":" 0.4",
         "transitionDuration": 1.2,
-        "delay": 0.8
+        "delay": 0.8,
+        "icon":"BotMessageSquare"
     }
 ]

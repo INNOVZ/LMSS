@@ -1,0 +1,178 @@
+{
+    "header": {
+        "logo": "/assets/images/dark-logo.webp",
+        "contact": {
+            "phone": "+1 9990 6588",
+            "email": "agency@example.com"
+        },
+        "navLinks": [
+            {
+                "label": "Home",
+                "href": "/"
+            },
+            {
+                "label": "Courses",
+                "href": "/courses"
+            },
+            {
+                "label": "Blog",
+                "href": "/blog"
+            },
+            {
+                "label": "Pages",
+                "href": "/pages"
+            }
+        ],
+        "authLinks": {
+            "login": "/login",
+            "register": "/register"
+        },
+        "social": [
+            {
+                "icon": "facebook",
+                "url": "#"
+            },
+            {
+                "icon": "twitter",
+                "url": "#"
+            },
+            {
+                "icon": "linkedin",
+                "url": "#"
+            }
+        ]
+    },
+    "hero": {
+        "headline": "Learn Something",
+        "highlight": "New Today",
+        "searchPlaceholder": "What do you want to learn?",
+        "features": [
+            {
+                "icon": "book",
+                "title": "6,000",
+                "subtitle": "Online Courses",
+                "desc": "Explore wide-range of online courses"
+            },
+            {
+                "icon": "star",
+                "title": "Top",
+                "subtitle": "Instructors",
+                "desc": "Learn from the best experts of the subjects"
+            },
+            {
+                "icon": "clock",
+                "title": "Portable",
+                "subtitle": "Programs",
+                "desc": "Allow you to learn anywhere, anytime"
+            },
+            {
+                "icon": "award",
+                "message": "Congratulations to Sophia for being student of the week!"
+            }
+        ],
+        "backgroundImage": "/assets/images/hero-bg.jpg"
+    },
+    "courseTabs": [
+        "All",
+        "Trending",
+        "Popularity",
+        "Featured",
+        "Art & Design"
+    ],
+    "homeCourses": [
+        {
+            "id": 1,
+            "title": "Successful Negotiation: Master Your Negotiating Skills",
+            "instructor": "parna",
+            "price": "$33.00",
+            "level": "All Levels",
+            "image": "/assets/images/course-1.jpg",
+            "rating": 4.5,
+            "isFree": false
+        },
+        {
+            "id": 2,
+            "title": "Time Management Mastery: Do More, Stress Less",
+            "instructor": "parna",
+            "price": "$23.99",
+            "level": "All Levels",
+            "image": "/assets/images/course-2.jpg",
+            "rating": 4.7,
+            "isFree": false
+        },
+        {
+            "id": 3,
+            "title": "Angular – The Complete Guide (2020 Edition)",
+            "instructor": "parna",
+            "price": "$49.00",
+            "level": "Beginner",
+            "image": "/assets/images/course-3.jpg",
+            "rating": 4.8,
+            "isFree": false
+        }
+    ],
+    "cta": {
+        "title": "Let Us Help Finding Your Right Courses",
+        "buttonLabel": "Get started"
+    },
+    "stats": {
+        "title": "Achieve Your Goals with EduMall",
+        "items": [
+            {
+                "label": "Students Enrolled",
+                "value": "253,085"
+            },
+            {
+                "label": "Classes Completed",
+                "value": "18,099"
+            },
+            {
+                "label": "Career Benefits",
+                "value": "88%"
+            },
+            {
+                "label": "Top Courses",
+                "value": "4,038"
+            }
+        ]
+    },
+    "events": [
+        {
+            "date": "August 18, 2022",
+            "title": "Global Education fas | Meeting for Everyone",
+            "location": "United States"
+        },
+        {
+            "date": "November 2, 2022",
+            "title": "London International Conference on Education",
+            "location": "London"
+        }
+    ],
+    "testimonials": [
+        {
+            "name": "Oliver Beddows",
+            "title": "Designer, Manchester",
+            "message": "Great quality! I wanted to place a review since their support helped me within a day or so...",
+            "rating": 5
+        }
+    ],
+    "blogs": [
+        {
+            "title": "Back To School Social-Emotional Basics",
+            "date": "August 10, 2022",
+            "views": 4036,
+            "snippet": "As our elementary students head back to school...",
+            "image": "/assets/images/blog-1.jpg"
+        },
+        {
+            "title": "Exactly How Technology Can Make Reading Better",
+            "date": "August 10, 2022",
+            "views": 287,
+            "snippet": "As our elementary students head back to school...",
+            "image": "/assets/images/blog-2.jpg"
+        }
+    ],
+    "footer": {
+        "copyright": "© 2025 EduMall Made with ❤️ by DevSanu"
+    }
+}
