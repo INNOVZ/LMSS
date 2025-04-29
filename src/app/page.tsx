@@ -51,7 +51,7 @@ export default function HomePage() {
             viewport={{ once: false, amount: 0.3 }}
             transition={{
               type: "tween",
-              duration: 0.8,
+              duration: 0.12,
               stiffness: 100,
               damping: 20,
               delay: 0.3,

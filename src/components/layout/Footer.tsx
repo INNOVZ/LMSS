@@ -19,8 +19,8 @@ export default function Footer() {
   if (!footer) return <p>Footer data is not available.</p>;
 
   return (
-    <footer className="bg-gray-100">
-      <div className="mt-15 p-10 w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+    <footer className="bg-linear-to-t p-10 from-blue-200 to-grey-100">
+      <div className="mt-15 w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
         <div className="flex flex-col items-left">
           <h1 className="text-blue-700 font-bold text-2xl">Mastry</h1>
           <p className="mt-2">Learn, Master, Build</p>
@@ -40,7 +40,7 @@ export default function Footer() {
           <p className="mt-2">Contact Us</p>
         </div>
       </div>
-      <div className="bg-gray-100 text-center py-6 text-sm text-gray-600">
+      <div className="text-center py-6 text-sm text-gray-600">
         {footer?.copyright}
       </div>
     </footer>
