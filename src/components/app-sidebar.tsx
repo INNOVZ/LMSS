@@ -19,20 +19,21 @@ const items = [
     icon: Home,
   },
   {
-    title: "Inbox",
-    url: "#",
+    title: "Create Course",
+    url: "/teacher/dashboard/createcourse",
     icon: Inbox,
-  },
-  {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
   },
   {
     title: "Search",
     url: "#",
     icon: Search,
   },
+  {
+    title: "Calendar",
+    url: "#",
+    icon: Calendar,
+  },
+
   {
     title: "Settings",
     url: "#",
@@ -45,8 +46,10 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
-          <SidebarGroupContent>
+          <SidebarGroupLabel className="bg-gray-900 text-white my-3 text-2xl flex justify-center">
+            James Mathew
+          </SidebarGroupLabel>
+          <SidebarGroupContent className="mt-8">
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>

@@ -2,7 +2,10 @@
 
 import { getPageData } from "@/lib/pageContent";
 import { useEffect, useState } from "react";
-
+import Logo from "../../../public/assets/images/logo.svg";
+import Image from "next/image";
+import Link from "next/link";
+import { Separator } from "@/components/ui/separator";
 type FooterData = {
   copyright: string;
 };
@@ -19,28 +22,41 @@ export default function Footer() {
   if (!footer) return <p>Footer data is not available.</p>;
 
   return (
-    <footer className="bg-linear-to-t p-10 from-blue-200 to-grey-100">
-      <div className="mt-15 w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-        <div className="flex flex-col items-left">
-          <h1 className="text-blue-700 font-bold text-2xl">Mastry</h1>
-          <p className="mt-2">Learn, Master, Build</p>
-          <p className="mt-5">Privacy Policy</p>
-          <p className="mt-2">Terms of Service</p>
-          <p className="mt-2">Refund Policy</p>
-        </div>
-        <div className="flex flex-col text-right items-center">
-          <h1 className="text-blue-700 font-bold text-2xl">Courses</h1>
-          <p className="mt-2">SEO</p>
-          <p className="mt-2">Social Media Marketing</p>
-          <p className="mt-2">AI enabled Marketing</p>
+    <footer className="mt-15 bg-linear-to-t from-gray-300 to-white">
+      <Separator />
+      <div className="py-15 w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
+        <div className="flex flex-col text-right justify items-end">
+          <Image
+            src={Logo}
+            alt="Banner"
+            className="object-cover w-[240] h-[95]"
+          />
+          {/* <p className="mt-2">Learn, Master, Build</p> */}
         </div>
         <div className="flex flex-col text-right items-right">
-          <h1 className="text-blue-700 font-bold text-2xl">Mastry</h1>
-          <p className="mt-2">About Us</p>
-          <p className="mt-2">Contact Us</p>
+          <h1 className="text-gray-900 font-bold text-2xl">Courses</h1>
+          <p className="mt-2 text-sm">SEO</p>
+          <p className="mt-2 text-sm">Social Media Marketing</p>
+          <p className="mt-2 text-sm">AI enabled Marketing</p>
+        </div>
+        <div className="flex flex-col text-right items-right">
+          <h1 className="text-gray-900 font-bold text-2xl">Quick Links</h1>
+          <p className="mt-2 text-sm">About Us</p>
+          <p className="mt-2 text-sm">Contact Us</p>{" "}
+          <p className="mt-2 text-sm">Terms of Service</p>
+          <p className="mt-2 text-sm">Refund Policy</p>
+        </div>
+        <div className="flex flex-col text-right">
+          <h1 className="text-gray-900 font-bold text-2xl">User Links</h1>
+          <Link href="/teacher/dashboard" className="mt-2 text-sm">
+            Instructor Login
+          </Link>
+          <Link href="/teacher/dashboard" className="mt-2 text-sm">
+            Student Login
+          </Link>
         </div>
       </div>
-      <div className="text-center py-6 text-sm text-gray-600">
+      <div className="text-center py-3 text-sm text-gray-600">
         {footer?.copyright}
       </div>
     </footer>
