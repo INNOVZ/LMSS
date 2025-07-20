@@ -4,12 +4,13 @@ import { getPageData } from "@/lib/pageContent";
 import { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import Banner from "../../../public/assets/images/6.jpg";
-import HomeBanner from "../../../public/assets/images/banner_home.png";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import LearnCard from "@/components/home/LearnCard";
+import CourseCard from "@/components/CourseCard";
 import { courses, categories } from "../../../public/assets/pages/learn.js";
 import { Input } from "@/components/ui/input";
+import Accordion from "@/components/Accordian";
+import Link from "next/link";
 import {
   Loader,
   BookOpenCheck,
@@ -21,9 +22,8 @@ import {
   Terminal,
   CircleArrowOutUpRight,
 } from "lucide-react";
-import Accordion from "@/components/Accordian";
-import Link from "next/link";
-import { Separator } from "@/components/ui/separator";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import HorizontalScroll from "@/components/HorizontalScroll";
 
 const items = [
   { title: "Section 1", content: <p>Content 1</p> },
@@ -31,7 +31,6 @@ const items = [
 ];
 
 export default function HomePage() {
-
   const { scrollY } = useScroll();
   // Move image 0px at top, 200px right at 500px scroll
   const x = useTransform(scrollY, [0, 500], [0, 250]);
@@ -62,7 +61,7 @@ export default function HomePage() {
 
   return (
     <>
-      <div className="mt-15 z-0">
+      <div className="mt-15 z-0 px-5 md:px-0">
         {/* Use grid-rows-[{size}] for custom sizes */}
         <div className="relative px-3 items-center justify-center">
           {/* Row 1 - 30% height */}
@@ -192,32 +191,30 @@ export default function HomePage() {
           </div>
         </>
         <div className="bg-gray-100 md:ml-10 py-15 mt-24 gap-4 rounded-l-3xl">
-          <div className="container mx-auto md:ml-18">
-            <h1 className="text-3xl text-gray-800 font-bold">
+          <div className="md:container md:mx-auto ml-0 md:ml-18">
+            <h1 className="text-3xl text-gray-800 px-5 font-bold">
               Popular Courses
             </h1>
-            <div className="container mt-8 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 z-[-1]">
-              {courses.map((course) => (
-                <Link
-                  key={course.id}
-                  href={`/courses/${course.id}`}
-                  className="transition-transform duration-500 hover:-translate-y-1 hover:shadow-md"
-                >
-                  <LearnCard
-                    title={course.title}
-                    course_image={course.image}
-                    length={course.duration}
-                    description={course.description}
-                    // buttomText={card.buttomText}
-                    // link={card.link}
-                    // icon={card.icon}
-                  />
-                </Link>
-              ))}
+            <div className="container mx-auto mt-8 px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 z-[-1]">
+              <ScrollArea className="w-[82vw] h-auto rounded-md whitespace-nowrap">
+                <div className="flex py-4 gap-5">
+                  {courses.map((course) => (
+                    <Link
+                      key={course.id}
+                      href={`/courses/${course.id}`}
+                      className="transition-transform duration-500 hover:-translate-y-1 hover:shadow-md"
+                    >
+                      <CourseCard
+                        course={{ ...course, id: course.id.toString() }}
+                      />
+                    </Link>
+                  ))}{" "}
+                </div>
+                <ScrollBar orientation="horizontal" hidden />
+              </ScrollArea>
             </div>
           </div>
         </div>
-
         <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mx-auto mt-24 bg-black  p-4 rounded-lg shadow z-[-1]">
           <div className="p-10 flex flex-col items-center justify-center">
             <h1 className="text-5xl text-white font-bold text-center">

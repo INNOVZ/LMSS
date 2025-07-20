@@ -11,6 +11,11 @@ import ScrollArea from "@/components/ScrollArea";
 import { Loader, BookOpenCheck, TvMinimalPlay } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import CourseCard from "@/components/CourseCard";
+import RecommendedCourses from "@/components/Recommends";
+import Link from "next/link";
 import {
   CheckCircle,
   Bell,
@@ -23,9 +28,6 @@ import {
   Clock,
   Download,
 } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-
 interface CourseDetailProps {
   params: any; // or { id: string } if not a promise in current version
 }
@@ -48,8 +50,8 @@ export default function CourseDetail({ params }: CourseDetailProps) {
   return (
     <div className="">
       <div className=" bg-gray-100 p-15">
-        <span className="container mx-auto grid grid-cols-1 md:grid-col-reverse md:grid-cols-2 gap-5">
-          <div className="order-2 md:order-1 md:pr-15">
+        <span className="container mx-auto grid grid-cols-1 md:grid-col-reverse md:grid-cols-3 gap-5">
+          <div className="order-2 md:order-1 md:pr-15 md:col-span-2">
             <span className="shadow border bg-black text-white inline-block px-3 py-1 text-xs rounded-lg">
               Web Development
             </span>
@@ -61,12 +63,6 @@ export default function CourseDetail({ params }: CourseDetailProps) {
               dolor sed, qui dolore architecto.
             </p>
             <div className="border-gray-500 my-2 flex items-center justify-between rounded-md">
-              <div className="flex items-center">
-                <span className="pointer shadow border bg-black text-white inline-block px-6 py-3 text-xs rounded-lg">
-                  Enroll Now
-                </span>
-                <p className="font-bold px-5">$ 9.99</p>
-              </div>
               <div className="flex m-0">
                 <p className="mr-3 text-base font-bold">Instructors</p>
                 <div className="flex">
@@ -83,14 +79,7 @@ export default function CourseDetail({ params }: CourseDetailProps) {
             </div>
           </div>
           <div className="order-1 md:order-2 w-full">
-            <Image
-              src={course.image}
-              alt={course.title}
-              className="mb-4 rounded-lg w-full h-auto"
-              width={400}
-              height={250}
-              style={{ width: "100%", height: "auto" }}
-            />
+            <CourseCard course={{ ...course, id: String(course.id) }} />
           </div>
         </span>
       </div>
@@ -348,42 +337,24 @@ export default function CourseDetail({ params }: CourseDetailProps) {
           </div>
         </div>
       </div>
-      {/* <div className="mx-8 mt-15">
-        <div className="">
-          <div className="grid grid-cols-5 mt-8 gap-5">
-            <div className="grid p-3 col-span-3">
-              <h1 className="text-2xl mb-8 font-bold underline">
-                What will you learn in this course
-              </h1>
-              <ScrollArea />
-            </div> */}
-
-      {/* <div className="col-span-2 p-3 bg-linear-to-r flex flex-col rounded-lg">
-              <p className="flex  items-center text-2xl text-center mb-8 font-bold gap-5">
-                <TvMinimalPlay /> Upcoming live
-              </p>
-              <Image
-                src={Python}
-                alt={course.title}
-                className="mb-4 cover rounded-lg w-full h-auto"
-                width={200}
-                height={250}
-                style={{ width: "", height: 300 }}
-              />
-              <div className="flex justify-between px-5 py-2 border-b">
-                <p className="flex items-start font-bold">
-                  Web development in AI era
-                </p>
-                <span className="shadow border bg-black text-white inline-block px-3 py-1 text-xs rounded-lg">
-                  50 minutes
-                </span>
-              </div>
-            </div>
+      <div className="bg-gray-100 md:ml-10 py-15 mt- gap-4 rounded-l-3xl">
+        <div className="md:container md:mx-auto ml-0 md:ml-18">
+          <h1 className="text-3xl text-gray-800 px-5 font-bold">
+            Recommended Courses
+          </h1>
+          <div className="container mt-8 mx-auto px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 z-[-1]">
+            {courses.map((course) => (
+              <Link
+                key={course.id}
+                href={`/courses/${course.id}`}
+                className="transition-transform duration-500 hover:-translate-y-1 hover:shadow-md"
+              >
+                <CourseCard course={{ ...course, id: course.id.toString() }} />
+              </Link>
+            ))}
           </div>
         </div>
-      </div> */}
-
-      {/* Add more course details as needed */}
+      </div>
     </div>
   );
 }

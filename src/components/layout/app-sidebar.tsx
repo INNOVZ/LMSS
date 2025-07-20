@@ -20,7 +20,7 @@ const items = [
   },
   {
     title: "Create Course",
-    url: "/teacher/dashboard/createcourse",
+    url: "/console/instructor/createcourse",
     icon: Inbox,
   },
   {

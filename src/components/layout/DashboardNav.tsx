@@ -5,7 +5,7 @@ const DashboardNav = () => {
   const pathname = usePathname();
   const router = useRouter();
 
-  const isTeacherDashboard = pathname?.startsWith("/teacher");
+  const isTeacherDashboard = pathname?.startsWith("/console");
   const isstudentDashboard = pathname?.startsWith("/student");
     return <div className="container mx-auto">
       {/* {isTeacherDashboard ?():

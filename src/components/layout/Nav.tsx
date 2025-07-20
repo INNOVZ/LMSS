@@ -1,15 +1,19 @@
-// components/Navbar.tsx
 "use client";
 import { useState } from "react";
 import Link from "next/link";
 // import Image from "next/image";
 import { PackageCheck, Search, User, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useCartStore } from "@/stores/Cart";
+import { Badge } from "@/components/ui/badge";
 // import { ClerkLoaded, useUser, SignInButton, UserButton } from "@clerk/nextjs";
 
 const Navbar = () => {
   // const { user } = useUser();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showCartPopup, setShowCartPopup] = useState(false);
+
+  const cartItems = useCartStore((state) => state.cart);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -55,24 +59,42 @@ const Navbar = () => {
                 </span>
               </form>
             </div>
-           
           </div>
 
           {/* Shopping Cart & User Account */}
           <div className="hidden md:flex items-center justify-end space-x-7 w-3/12">
             <Link
-              href="/about"
+              href="/learningprofile"
               className="text-gray-900 hover:text-black transition-colors"
             >
               My courses
             </Link>
-            <Link href="/">
-              <ShoppingCart />
-            </Link>
             <Link
-              href="/auth/login"
-              className="text-gray-700 hover:text-red-400"
+              href="/cart"
+              className="relative"
+              onMouseEnter={() => setShowCartPopup(true)}
+              onMouseLeave={() => setShowCartPopup(false)}
             >
+              <ShoppingCart className="h-6 w-6 text-gray-700 hover:text-purple-600 transition-colors" />
+              {cartItems.length > 0 && (
+                <Badge className="absolute -top-2 -right-2 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs">
+                  {cartItems.length}
+                </Badge>
+              )}
+            </Link>
+            {showCartPopup && cartItems.length > 0 && (
+              <div className="relative w-48 bg-white border rounded shadow-lg z-10">
+                <div className="p-2">
+                  <p className="font-semibold mb-2">Cart</p>
+                  {cartItems.map((item) => (
+                    <div key={item.id} className="text-sm py-1 border-b">
+                      {item.title} - ${item.price.toFixed(2)}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            <Link href="/auth/login" className="text-gray-700">
               <span className="flex gap-3 items-center">
                 <span className="pointer py-2 rounded-lg gap-2">Log In</span>{" "}
                 <span className="bg-black text-white w-7 h-7 rounded-full flex items-center justify-center">

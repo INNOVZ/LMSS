@@ -48,10 +48,10 @@ export default function Footer() {
         </div>
         <div className="flex flex-col text-right">
           <h1 className="text-gray-900 font-bold text-2xl">User Links</h1>
-          <Link href="/teacher/dashboard" className="mt-2 text-sm">
+          <Link href="/console/instructor" className="mt-2 text-sm">
             Instructor Login
           </Link>
-          <Link href="/teacher/dashboard" className="mt-2 text-sm">
+          <Link href="/auth/login" className="mt-2 text-sm">
             Student Login
           </Link>
         </div>
