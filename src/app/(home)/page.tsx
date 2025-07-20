@@ -226,7 +226,7 @@ export default function HomePage() {
               step towards a successful career in digital marketing.
             </p>
           </div>
-          <div className="p-20 flex flex-col items-end justify-items-end">
+          <div className="p-5 md:p-20 flex flex-col items-end justify-items-end">
             <Input
               type="text"
               placeholder="Name"

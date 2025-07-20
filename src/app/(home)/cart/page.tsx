@@ -51,21 +51,19 @@ const CartPage: React.FC = () => {
           {/* <RecommendedCourses maxCourses={4} /> */}
         </div>
         {/* Recommended Courses Section */}
-        <div className="bg-gray-100 md:ml-10 py-15 mt-15 gap-4 rounded-l-3xl">
-          <div className="md:container md:mx-auto ml-0 md:ml-18">
+        <div className="bg-gray-100 md:ml-15 py-15 mt-15 gap-4 rounded-l-3xl">
+          <div className="ml-0 md:ml-18">
             <h1 className="text-3xl text-gray-800 px-5 font-bold">
               Recommended Courses
             </h1>
-            <div className="container mt-8 mx-auto px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 z-[-1]">
+            <div className="mt-8 mx-auto px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 z-[-1]">
               {courses.map((course) => (
                 <Link
                   key={course.id}
                   href={`/courses/${course.id}`}
                   className="transition-transform duration-500 hover:-translate-y-1 hover:shadow-md"
                 >
-                  <CourseCard
-                    course={{ ...course, id: course.id.toString() }}
-                  />
+                  <CourseCard course={{ ...course, id: course.id.toString() }} />
                 </Link>
               ))}
             </div>
@@ -77,7 +75,7 @@ const CartPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 py-12">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="px-4  sm:px-6 lg:px-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Shopping Cart</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -199,7 +197,7 @@ const CartPage: React.FC = () => {
         </div>
 
         {/* Recommended Courses Section */}
-        <div className="bg-gray-100 md:ml-10 py-15 mt- gap-4 rounded-l-3xl">
+        <div className="bg-gray-100 md:ml-10 py-15 mt-15 gap-4 rounded-l-3xl">
           <div className="md:container md:mx-auto ml-0 md:ml-18">
             <h1 className="text-3xl text-gray-800 px-5 font-bold">
               Recommended Courses

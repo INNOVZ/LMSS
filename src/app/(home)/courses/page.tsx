@@ -44,7 +44,9 @@ const CoursesPage = () => {
       </div>
 
       <div className="container mx-auto py-8">
-        <h2 className="text-2xl font-bold mb-4 px-5 md:px-0">Browse by Category</h2>
+        <h2 className="text-2xl font-bold mb-4 px-5 md:px-0">
+          Browse by Category
+        </h2>
 
         <div className="md:hidden px-5">
           <select
@@ -91,7 +93,7 @@ const CoursesPage = () => {
         </div>
       </div>
 
-      <div className="bg-gray-100 md:ml-10 py-15 mt-8 gap-4 rounded-l-xl">
+      <div className="bg-gray-100 md:ml-10 py-15 px-5 md:px-0 mt-8 gap-4 rounded-l-xl">
         <div className="container mx-auto md:ml-18">
           <h1 className="text-2xl text-gray-800 font-medium">
             {activeCategory
@@ -130,7 +132,7 @@ const CoursesPage = () => {
       </div>
 
       {!activeCategory && (
-        <div className="bg-gray-100 md:mr-10 py-15 mt-15 gap-4 rounded-r-xl">
+        <div className="bg-gray-100 md:mr-10 py-15 px-5 md:px-0 mt-15 gap-4 rounded-r-xl">
           <div className="container mx-auto md:mr-18">
             <h1 className="text-2xl text-gray-800 font-medium">
               Digital Marketing

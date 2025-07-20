@@ -141,6 +141,9 @@ const CoursePlayer = () => {
       <div className="bg-gray-800 border-b border-gray-700">
         <div className="px-4 py-3 flex items-center justify-between">
           <div className="flex items-center space-x-4">
+            <Link href="/learningprofile" className="text-gray-300 hover:text-white">
+              <ChevronLeft className="h-5 w-5" />
+            </Link>
             <div>
               <h1 className="font-semibold text-lg">{course.title}</h1>
               <p className="text-sm text-gray-400">by {course.instructor}</p>

@@ -82,62 +82,62 @@ const Dashboard = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <Card className="pointer bg-gradient-to-r from-blue-500 to-purple-600 text-white transition-transform duration-300 hover:scale-105">
+          <Card className="pointer hover:shadow-lg text-white transition-transform duration-300 hover:scale-105">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-blue-100 text-sm font-medium">
+                  <p className="text-black text-sm font-medium">
                     Enrolled Courses
                   </p>
-                  <p className="text-3xl font-bold">{enrolledCourses.length}</p>
+                  <p className="text-3xl text-black font-bold">
+                    {enrolledCourses.length}
+                  </p>
                 </div>
-                <BookOpen className="h-8 w-8 text-blue-100" />
+                <BookOpen className="h-8 w-8 text-black" />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="pointer bg-gradient-to-r from-green-500 to-teal-600 text-white transition-transform duration-300 hover:scale-105">
+          <Card className="pointer hover:shadow-lg text-white transition-transform duration-300 hover:scale-105">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-green-100 text-sm font-medium">
-                    Completed
-                  </p>
-                  <p className="text-3xl font-bold">
+                  <p className="text-black text-sm font-medium">Completed</p>
+                  <p className="text-3xl text-black font-bold">
                     {completedCourses.length}
                   </p>
                 </div>
-                <Award className="h-8 w-8 text-green-100" />
+                <Award className="h-8 w-8 text-black" />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="pointer bg-gradient-to-r from-orange-500 to-red-600 text-white transition-transform duration-300 hover:scale-105">
+          <Card className="pointer hover:shadow-lg text-white transition-transform duration-300 hover:scale-105">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-orange-100 text-sm font-medium">
+                  <p className="text-black text-sm font-medium">
                     Average Progress
                   </p>
-                  <p className="text-3xl font-bold">
+                  <p className="text-3xl text-black font-bold">
                     {Math.round(averageProgress)}%
                   </p>
                 </div>
-                <TrendingUp className="h-8 w-8 text-orange-100" />
+                <TrendingUp className="h-8 w-8 text-black" />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="pointer bg-gradient-to-r from-purple-500 to-pink-600 text-white transition-transform duration-300 hover:scale-105">
+          <Card className="pointer hover:shadow-lg text-white transition-transform duration-300 hover:scale-105">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-purple-100 text-sm font-medium">
+                  <p className="text-black text-sm font-medium">
                     Learning Hours
                   </p>
-                  <p className="text-3xl font-bold">42</p>
+                  <p className="text-3xl text-black font-bold">42</p>
                 </div>
-                <Clock className="h-8 w-8 text-purple-100" />
+                <Clock className="h-8 w-8 text-black" />
               </div>
             </CardContent>
           </Card>

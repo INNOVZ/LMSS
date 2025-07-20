@@ -8,9 +8,9 @@ import React from "react";
 
 const NavBanner = () => {
   return (
-    <div className="relative flex bg-[#4338ca] justify-center items-center px-4 py-3 shadow">
-      <h1 className="text-xs text-white">
-        Limited Time Offer: Get 50% off on all courses! Use code:MARK25
+    <div className="relative flex bg-[#000000] justify-center items-center px-4 py-3 shadow">
+      <h1 className="text-xs text-white text-center">
+        Limited Time Offer: Get 50% off on all courses ! <b>Use code:MARK25</b>
       </h1>
       {/* <Form
         action="/search"
